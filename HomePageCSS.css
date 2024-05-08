@@ -1,0 +1,31 @@
+header {
+    font-size: xx-large;
+    text-align: center;
+}
+
+#mainNav {
+    text-align: center;
+    background-color: rgb(84, 0, 0);
+}
+
+#mainNav li {
+    display: inline-block;
+    position: relative;
+    padding: 10px;
+    transition: .5s;
+}
+
+#mainNav li:hover {
+    cursor: pointer;
+    background-color: rgb(195, 0, 0);
+    box-shadow: 0 12px 16px 0 rgb(255, 67, 67), 0 17px 50px 0 rgb(255, 67, 67);
+}
+
+#mainNav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+#info {
+    text-align: center;
+}
