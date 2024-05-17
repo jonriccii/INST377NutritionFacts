@@ -11,11 +11,11 @@ const supabase = supabaseClient.createClient(supabaseUrl, supabaseKey)
 
 // Creating the API
 // Source for the data is from: https://www.health.harvard.edu/blog/10-superfoods-to-boost-a-healthy-diet-2018082914463
-app.get('/superfood', async (req, res) => { //REPLACE
+app.get('/superfood', async (req, res) => {
     console.log('Attempting to get all data')
 
     const { data, error } = await supabase
-        .from('Superfood') //REPLACE
+        .from('Superfood')
         .select()
 
         if(error) {
@@ -26,6 +26,26 @@ app.get('/superfood', async (req, res) => { //REPLACE
         }
 })
 
+/*
+// Creating the Daily Values API
+// Source for the data is from: https://www.fda.gov/media/99059/download OR https://ods.od.nih.gov/HealthInformation/dailyvalues.aspx
+
+app.get('/dailyvalues', async (req, res) => {
+    console.log('Attempting to get all data')
+
+    const { data, error } = await supabase
+        .from('DailyValues')
+        .select()
+
+        if(error) {
+            console.log('Error')
+            res.send(error)
+        } else {
+            res.send(data)
+        }
+})
+*/
+
 app.listen(port, () => {
-    console.log('APP IS ALIVE')
+    console.log('app is working')
 })
