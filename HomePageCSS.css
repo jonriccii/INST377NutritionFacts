@@ -142,3 +142,13 @@ footer {
 #info {
     text-align: center;
 }
+#imgSlide { 
+    display: block;
+    width:400px; 
+    height:400px; 
+    margin-left: auto;
+    margin-right: auto;
+    border: 3px solid #111;
+    padding:5px;
+    ;
+ }
