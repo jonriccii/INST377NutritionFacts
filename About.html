@@ -1,11 +1,11 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Page</title>
-
     <link rel="stylesheet" href="AboutCSS.css">
 </head>
-
 <body>
     <nav id="mainNav">
         <ul>
@@ -60,21 +60,36 @@
         </footer>
     </div>
     <script>
-        function handleSubmit(event) {
+        async function handleSubmit(event) {
             event.preventDefault();
             const email = document.getElementById('email').value;
             const issue = document.getElementById('issue').value;
 
-            fetch('https://ifbflwiyjaalbkxtfaik.supabase.co', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email: email, issue: issue })
-            })
-            .then(response => response.json())
-            .then(data => alert('Thank you for contacting us!'))
-            .catch(error => console.error('Error:', error));
+            const serverUrl = (window.location.port === '5500' || window.location.port === '') 
+                ? 'http://localhost:3000/submit' 
+                : '/submit';
+
+            try {
+                const response = await fetch(serverUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, issue })
+                });
+
+                const result = await response.json();
+                if (response.ok) {
+                    alert('Thank you for contacting us!');
+                } else {
+                    console.error('Submission error:', result.error);
+                    alert('Failed to submit: ' + result.error.message);
+                }
+            } catch (error) {
+                console.error('Fetch error:', error);
+                alert('An error occurred. Please try again.');
+            }
         }
     </script>
 </body>
-
 </html>
+
+
