@@ -1,5 +1,6 @@
 const supabaseClient = require('@supabase/supabase-js')
 const express = require('express')
+const path = require('path')
 
 const app = express()
 const port = 3000
@@ -47,5 +48,5 @@ app.get('/dailyvalues', async (req, res) => {
 */
 
 app.listen(port, () => {
-    console.log('app is working')
-})
+    console.log(`App is running on http://localhost:${port}`);
+});
