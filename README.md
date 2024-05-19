@@ -6,8 +6,7 @@ Our group project aims to help users with groccery shopping! Grocery shopping ca
 Developer Manual: 
 
 **How to install your application and all dependencies**: 
-  You install all the dependencies for the application by cloning the respository then navigating to your project     
-  directory, where you will install the dependencies by typing "npm install" into the terminal. 
+  You install all the dependencies for the application by cloning the respository then navigating to your project     directory, where you will install the dependencies by typing "npm install" into the terminal. 
   
 **How to run your application on a server**: 
   You will run your application on a server by starting the server by typing in "node server.js" and "node index.js". 
