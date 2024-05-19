@@ -7,14 +7,17 @@ Developer Manual:
 **How to install your application and all dependencies**  
   You install all the dependencies for the application by cloning the respository then navigating to your project     
   directory, where you will install the dependencies by typing "npm install" into the terminal. 
+  
 **How to run your application on a server**
   You will run your application on a server by starting the server by typing in "node server.js" and "node index.js". 
   You will then open your brownser and navigate to localhost:3000 in order to run the application. 
+  
 **How to run any tests you have written for your software**
   There are currently no tests scripts that are defined in the package.json file. In order to incorporate a test, you 
   can implement the following into the package.json file. "scripts" : {
                                                              "test": "echo\ "Error: no test specified\" && exit 1"
                                                              } 
+                                                             
 **The API for your server application - all GET, POST, PATCH, etc endpoints, and what they each do**
   GET/customers is an API endpoint that fetches a list of customers and responds with a message indicating the customers   endpoint. The POST/ submit API endpooint submits a contact form with an email and issue that responds with a JSON     
   object that indicates a success or failure of the data insertion. The GET/superfood API endpoint fetches data about 
